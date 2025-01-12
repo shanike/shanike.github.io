@@ -1,0 +1,13 @@
+singleQuote: false # the default
+printWidth: 85
+tabWidth: 4
+experimentalTernaries: false # the default
+bracketSameLine: false # the default
+proseWrap: always
+
+plugins:
+    - prettier-plugin-css-order
+    - prettier-plugin-organize-imports
+
+cssDeclarationSorterKeepOverrides: false
+cssDeclarationSorterOrder: concentric-css

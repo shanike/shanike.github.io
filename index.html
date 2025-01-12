@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Welcome to Shani's WIP personal website" />
+    <title>Shani Kehati - Personal Website (WIP)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        transition: background-color 0.3s, color 0.1s;
+      }
+      
+      :root {
+        --bg-color: #f4f4f9;
+        --fg-color: #333;
+        --link-color: #0078d7;
+        --toggle-mode-button--bg-color: #0078d7;
+        --toggle-mode-button--fg-color: #f4f4f9;
+      }
+
+      [data-theme="dark"] {
+        --bg-color: #333;
+        --fg-color: #f4f4f9;
+        --link-color: #1e90ff;
+        --toggle-mode-button--bg-color: #1e90ff;
+        --toggle-mode-button--fg-color: #464545;
+      }
+
+      body {
+        font-family: "Assistant", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-color);
+        color: var(--fg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button.theme-toggle {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.25rem;
+        background-color: var(--toggle-mode-button--bg-color);
+        color: var(--toggle-mode-button--fg-color);
+      }
+
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span>Hello</span>
+        <span>!</span>
+        <span>שלום</span>
+      </h1>
+    </header>
+    
+    <button class="theme-toggle" type="button" onclick="toggleTheme()">Theme</button>
+
+    <main>
+      <section id="about">
+        <p>I'm Shani Kehati, a Full Stack Developer and Team Leader.</p>
+        <p>
+          I work at <a href="https://hilma.tech" target="_blank">Hilma</a> while
+          studying Computer Science at the Open University.
+          👋
+        </p>
+      </section>
+    </main>
+  </body>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.body.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      document.body.setAttribute("data-theme", newTheme);
+    }
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)" ).matches;
+    document.body.setAttribute("data-theme", prefersDark ? "dark" : "light");
+  </script>
+</html>
